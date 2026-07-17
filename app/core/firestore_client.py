@@ -65,7 +65,7 @@ def get_client() -> Any | None:  # noqa: ANN401
         return None
 
     try:
-        from google.cloud import firestore  # type: ignore
+        from google.cloud import firestore
         _client = firestore.Client(project=project)
         logger.info(
             "Firestore client initialised for project=%s venue=%s",
@@ -102,7 +102,9 @@ def fetch_venue_config() -> dict | None:
     try:
         doc = client.collection(_VENUES_COLLECTION).document(venue_id()).get()
         if doc.exists:
-            return doc.to_dict()
+            val = doc.to_dict()
+            if isinstance(val, dict):
+                return val
         logger.warning(
             "Firestore venue document '%s' not found in collection '%s' — "
             "will seed from venues.json and fall back",

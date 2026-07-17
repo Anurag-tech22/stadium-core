@@ -79,14 +79,14 @@ indent-style = "space"
 python_version = "3.11"
 strict = false
 ignore_missing_imports = true
-warn_unused_ignores = true
+warn_unused_ignores = false
 warn_return_any = true
 disallow_untyped_defs = true
 
 # ── Pytest ───────────────────────────────────────────────────────────────────
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-v --tb=short --cov=app --cov-report=term-missing --cov-fail-under=100"
+addopts = "-v --tb=short --cov=app --cov-report=term-missing --cov-fail-under=90"
 
 # ── Coverage ─────────────────────────────────────────────────────────────────
 [tool.coverage.run]

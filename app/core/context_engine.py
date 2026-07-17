@@ -21,7 +21,7 @@ import tempfile
 import time
 from functools import lru_cache
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from app.core.schemas import (
     AccessibilityNeed,
@@ -314,7 +314,7 @@ def _load_overrides() -> dict[str, dict[str, Any]]:
     if os.path.exists(OVERRIDES_FILE):
         try:
             with open(OVERRIDES_FILE, encoding="utf-8") as f:
-                return json.load(f)
+                return cast(dict[str, dict[str, Any]], json.load(f))
         except Exception as exc:  # corrupted JSON or permission error
             logger.warning("Failed to load overrides from %s: %s", OVERRIDES_FILE, exc)
     return {}
