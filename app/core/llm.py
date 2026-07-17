@@ -22,30 +22,26 @@ logger = logging.getLogger("phoenix.llm")
 # ---------------------------------------------------------------------------
 _TEMPLATES: dict[str, dict[Language, str]] = {
     "find_gate": {
-        Language.EN: (
-            "Head to {gate}. Current predicted wait is " "about {wait} minutes ({level})."
-        ),
-        Language.HI: ("{gate} की ओर जाएं। अनुमानित प्रतीक्षा समय " "लगभग {wait} मिनट है ({level})."),
+        Language.EN: ("Head to {gate}. Current predicted wait is about {wait} minutes ({level})."),
+        Language.HI: ("{gate} की ओर जाएं। अनुमानित प्रतीक्षा समय लगभग {wait} मिनट है ({level})."),
         Language.ES: (
-            "Dirígete a {gate}. El tiempo de espera "
-            "estimado es de unos {wait} minutos ({level})."
+            "Dirígete a {gate}. El tiempo de espera estimado es de unos {wait} minutos ({level})."
         ),
         Language.FR: (
             "Dirigez-vous vers {gate}. Le temps d'attente "
             "estimé es d'environ {wait} minutes ({level})."
         ),
         Language.PT: (
-            "Vá até {gate}. O tempo de espera estimado é " "de cerca de {wait} minutos ({level})."
+            "Vá até {gate}. O tempo de espera estimado é de cerca de {wait} minutos ({level})."
         ),
     },
     "wait_time": {
         Language.EN: (
-            "{gate} currently has a predicted wait of {wait} " "minutes — congestion is {level}."
+            "{gate} currently has a predicted wait of {wait} minutes — congestion is {level}."
         ),
-        Language.HI: ("{gate} पर वर्तमान में अनुमानित प्रतीक्षा {wait} " "मिनट है — भीड़ स्तर {level} है।"),
+        Language.HI: ("{gate} पर वर्तमान में अनुमानित प्रतीक्षा {wait} मिनट है — भीड़ स्तर {level} है।"),
         Language.ES: (
-            "{gate} tiene actualmente una espera estimada de "
-            "{wait} minutos — congestión {level}."
+            "{gate} tiene actualmente una espera estimada de {wait} minutos — congestión {level}."
         ),
         Language.FR: (
             "{gate} a actuellement une attente estimée de "
@@ -58,13 +54,13 @@ _TEMPLATES: dict[str, dict[Language, str]] = {
     },
     # Standard wheelchair / step-free accessibility
     "accessibility": {
-        Language.EN: ("The step-free route is via {gate}, predicted " "wait {wait} minutes."),
-        Language.HI: ("स्टेप-फ्री रास्ता {gate} से है, अनुमानित " "प्रतीक्षा {wait} मिनट।"),
-        Language.ES: ("La ruta sin escalones es por {gate}, espera " "estimada de {wait} minutos."),
+        Language.EN: ("The step-free route is via {gate}, predicted wait {wait} minutes."),
+        Language.HI: ("स्टेप-फ्री रास्ता {gate} से है, अनुमानित प्रतीक्षा {wait} मिनट।"),
+        Language.ES: ("La ruta sin escalones es por {gate}, espera estimada de {wait} minutos."),
         Language.FR: (
-            "L'itinéraire sans marche se fait via {gate}, " "attente estimée de {wait} minutes."
+            "L'itinéraire sans marche se fait via {gate}, attente estimée de {wait} minutes."
         ),
-        Language.PT: ("A rota sem degraus é via {gate}, espera " "estimada de {wait} minutos."),
+        Language.PT: ("A rota sem degraus é via {gate}, espera estimada de {wait} minutos."),
     },
     # Audio-guided route for visually-impaired fans
     "accessibility_visual": {
@@ -133,14 +129,13 @@ _TEMPLATES: dict[str, dict[Language, str]] = {
     },
     "crowd_status": {
         Language.EN: (
-            "The least congested entry right now is {gate} at "
-            "{level} congestion ({wait} min wait)."
+            "The least congested entry right now is {gate} at {level} congestion ({wait} min wait)."
         ),
         Language.HI: (
-            "अभी सबसे कम भीड़ वाला प्रवेश द्वार {gate} है, " "भीड़ स्तर {level} ({wait} मिनट प्रतीक्षा)।"
+            "अभी सबसे कम भीड़ वाला प्रवेश द्वार {gate} है, भीड़ स्तर {level} ({wait} मिनट प्रतीक्षा)।"
         ),
         Language.ES: (
-            "La entrada menos congestionada ahora es {gate}, " "congestión {level} ({wait} min)."
+            "La entrada menos congestionada ahora es {gate}, congestión {level} ({wait} min)."
         ),
         Language.FR: (
             "L'entrée la moins encombrée en ce moment est {gate} "
@@ -181,12 +176,10 @@ _TEMPLATES: dict[str, dict[Language, str]] = {
         Language.HI: "शौचालय हर गेट कॉरिडोर के पास उपलब्ध हैं, जिसमें {gate} के पास भी शामिल है।",
         Language.ES: "Hay baños disponibles cerca de cada puerta, incluyendo cerca de {gate}.",
         Language.FR: (
-            "Des toilettes sont disponibles près de chaque hall de "
-            "porte, y compris près de {gate}."
+            "Des toilettes sont disponibles près de chaque hall de porte, y compris près de {gate}."
         ),
         Language.PT: (
-            "Banheiros estão disponíveis perto de cada saguão de "
-            "portão, inclusive perto do {gate}."
+            "Banheiros estão disponíveis perto de cada saguão de portão, inclusive perto do {gate}."
         ),
     },
     "sustainability": {
@@ -227,11 +220,10 @@ _TEMPLATES: dict[str, dict[Language, str]] = {
         Language.EN: "The best entry point right now is {gate}, predicted wait {wait} minutes.",
         Language.HI: "अभी सबसे अच्छा प्रवेश बिंदु {gate} है, अनुमानित प्रतीक्षा {wait} मिनट।",
         Language.ES: (
-            "El mejor punto de entrada ahora es {gate}, espera " "estimada de {wait} minutos."
+            "El mejor punto de entrada ahora es {gate}, espera estimada de {wait} minutos."
         ),
         Language.FR: (
-            "Le meilleur point d'entrée en ce moment es {gate}, "
-            "attente estimée de {wait} minutes."
+            "Le meilleur point d'entrée en ce moment es {gate}, attente estimée de {wait} minutes."
         ),
         Language.PT: "O melhor ponto de entrada agora é {gate}, espera estimada de {wait} minutos.",
     },
@@ -241,7 +233,7 @@ _TEMPLATES: dict[str, dict[Language, str]] = {
             "at the guest services desk near the main concourse."
         ),
         Language.HI: (
-            "खोई हुई वस्तु की सूचना दें, या मुख्य मार्ग के पास " "अतिथि सेवा डेस्क पर जमा वस्तुओं की जांच करें।"
+            "खोई हुई वस्तु की सूचना दें, या मुख्य मार्ग के पास अतिथि सेवा डेस्क पर जमा वस्तुओं की जांच करें।"
         ),
         Language.ES: (
             "Reporta un objeto perdido, o consulta lo entregado, "
@@ -274,10 +266,10 @@ _ALTERNATE_SUFFIX: dict[Language, str] = {
     Language.HI: " अगर वह व्यस्त है, तो {gate} अगला सबसे अच्छा विकल्प है, लगभग {wait} मिनट में।",
     Language.ES: " Si está ocupado, {gate} es la siguiente mejor opción, con unos {wait} minutos.",
     Language.FR: (
-        " Si c'est occupé, {gate} est la meilleure alternative, " "avec environ {wait} minutes."
+        " Si c'est occupé, {gate} est la meilleure alternative, avec environ {wait} minutes."
     ),
     Language.PT: (
-        " Si estiver ocupado, {gate} é a próxima melhor opção, " "com cerca de {wait} minutos."
+        " Si estiver ocupado, {gate} é a próxima melhor opção, com cerca de {wait} minutos."
     ),
 }
 

@@ -72,6 +72,6 @@ def test_end_to_end_user_journey():
     assert snapshot_gate_data["predicted_wait_minutes"] == predicted_wait_minutes
 
     # Recommended gate must be step-free
-    assert (
-        recommended_gate_id != "B"
-    ), "Non-accessible gate B must not be recommended for wheelchair accessibility needs"
+    assert recommended_gate_id != "B", (
+        "Non-accessible gate B must not be recommended for wheelchair accessibility needs"
+    )

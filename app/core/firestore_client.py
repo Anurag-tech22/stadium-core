@@ -59,8 +59,7 @@ def get_client() -> Any | None:  # noqa: ANN401
     project = os.environ.get("GOOGLE_CLOUD_PROJECT", "")
     if not project:
         logger.info(
-            "GOOGLE_CLOUD_PROJECT not set — running in local mode "
-            "(venues.json + overrides_db.json)"
+            "GOOGLE_CLOUD_PROJECT not set — running in local mode (venues.json + overrides_db.json)"
         )
         _initialised = True
         return None
@@ -76,7 +75,7 @@ def get_client() -> Any | None:  # noqa: ANN401
         )
     except Exception as exc:  # pragma: no cover
         logger.warning(
-            "Failed to initialise Firestore client (%s) — " "falling back to local mode",
+            "Failed to initialise Firestore client (%s) — falling back to local mode",
             exc,
         )
         _client = None

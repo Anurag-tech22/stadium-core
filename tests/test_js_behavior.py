@@ -86,8 +86,7 @@ def test_js_erlang_c_matches_python_backend(lam, mu, c):
     py_wait = predict_wait(gate).predicted_wait_minutes
     js_wait = _js_predict_wait(lam, mu, c)
     assert abs(py_wait - js_wait) <= 0.2, (
-        f"JS and Python Erlang-C disagree for λ={lam} μ={mu} c={c}: "
-        f"JS={js_wait} Python={py_wait}"
+        f"JS and Python Erlang-C disagree for λ={lam} μ={mu} c={c}: JS={js_wait} Python={py_wait}"
     )
 
 
