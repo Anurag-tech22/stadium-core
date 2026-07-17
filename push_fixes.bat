@@ -72,7 +72,7 @@ if not exist .git (
 )
 
 git add -A
-git commit -m "chore(deps): bump dependencies and actions to match Dependabot PRs"
+git commit -m "chore(deps): bump dependencies, actions, and add live demo URL"
 echo.
 echo Pushing to GitHub (https://github.com/Anurag-tech22/stadium-core.git)...
 git push origin main --force
