@@ -7,12 +7,12 @@ it only phrases what the engine already computed.
 
 from __future__ import annotations
 
-from enum import Enum
+from enum import StrEnum
 
 from pydantic import BaseModel, Field, field_validator
 
 
-class Language(str, Enum):
+class Language(StrEnum):
     EN = "en"
     HI = "hi"
     ES = "es"
@@ -20,12 +20,12 @@ class Language(str, Enum):
     PT = "pt"
 
 
-class Persona(str, Enum):
+class Persona(StrEnum):
     FAN = "fan"
     OPS = "ops"
 
 
-class AccessibilityNeed(str, Enum):
+class AccessibilityNeed(StrEnum):
     NONE = "none"
     WHEELCHAIR = "wheelchair"
     VISUAL = "visual"
