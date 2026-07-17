@@ -93,7 +93,7 @@ jobs:
       - name: Install Playwright browsers
         run: |
           pip install playwright
-          playwright install --with-deps chromium
+          python -m playwright install --with-deps chromium
 
       - name: Run Playwright + axe accessibility tests
         run: pytest tests/test_playwright.py -v --timeout=60
