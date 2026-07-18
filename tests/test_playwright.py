@@ -1,3 +1,8 @@
+"""Playwright UI and SSE synchronization tests.
+
+Verifies the UI rendering, reactive updates, and real-time SSE updates.
+"""
+
 from __future__ import annotations
 
 import socket

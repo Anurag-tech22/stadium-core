@@ -34,18 +34,19 @@ if exist .venv\Scripts\pytest.exe (
     )
 )
 
-:: 1. Run lint check and auto-fix
-echo [1/3] Running Ruff Linter check and auto-fix...
+:: 1. Run format, lint check and auto-fix
+echo [1/3] Running Ruff Formatter and Linter...
+%RUFF_CMD% format app/ tests/
 %RUFF_CMD% check --fix app/ tests/
 %RUFF_CMD% check app/ tests/
 if %ERRORLEVEL% neq 0 (
     echo.
-    echo [ERROR] Ruff linter found errors that could not be auto-fixed. Please fix them.
+    echo [ERROR] Ruff linter/formatter found errors. Please fix them.
     pause
     exit /b %ERRORLEVEL%
 )
 echo.
-echo === Ruff check passed successfully! ===
+echo === Ruff format and check passed successfully! ===
 echo.
 
 :: 2. Run unit tests

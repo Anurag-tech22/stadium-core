@@ -1,3 +1,9 @@
+"""Coverage and edge case tests.
+
+Verifies edge cases like missing configuration fallbacks,
+lifespan startup/shutdown errors, and other error boundary scenarios.
+"""
+
 from __future__ import annotations
 
 import importlib

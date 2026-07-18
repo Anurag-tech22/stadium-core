@@ -1,3 +1,9 @@
+"""End-to-end integration and user journey tests.
+
+Validates the full user journey from health check, assistant queries,
+and live ops operational snapshot consistency.
+"""
+
 from __future__ import annotations
 
 from fastapi.testclient import TestClient

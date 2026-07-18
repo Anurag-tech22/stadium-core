@@ -1,3 +1,9 @@
+"""Production environment verification tests.
+
+Validates security parameters, rate limiting behavior, sanitization logic,
+and various error boundary cases for production.
+"""
+
 from __future__ import annotations
 
 import json

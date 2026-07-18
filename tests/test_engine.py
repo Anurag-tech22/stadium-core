@@ -1,3 +1,9 @@
+"""Unit tests for the context and prediction engine.
+
+Covers Erlang-C wait time predictions, intent routing rules,
+accessibility need parsing, and venue configuration loaders.
+"""
+
 from __future__ import annotations
 
 import json
