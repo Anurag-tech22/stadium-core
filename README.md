@@ -1,11 +1,11 @@
-# 🏟️ Phoenix Stadium Assistant (StadiumMate)
+# 🏟️ Phoenix Stadium Assistant
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge&logo=google-cloud)](https://phoenix-stadium-316363722465.us-central1.run.app)
 [![CI](https://github.com/Anurag-tech22/Stadium-core/actions/workflows/ci.yml/badge.svg)](https://github.com/Anurag-tech22/Stadium-core/actions)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
-**StadiumMate** is an accessibility-first matchday assistant and tournament operations dashboard designed for the FIFA World Cup 2026. 
+**Phoenix Stadium Assistant** is an accessibility-first matchday assistant and tournament operations dashboard designed for the FIFA World Cup 2026. 
 
 🚀 **Live Demo:** [https://phoenix-stadium-316363722465.us-central1.run.app](https://phoenix-stadium-316363722465.us-central1.run.app) 
 
