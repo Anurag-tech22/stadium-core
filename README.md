@@ -143,6 +143,16 @@ This table provides direct traceability showing how the project satisfies all si
 
 ---
 
+## 📝 Assumptions Made
+
+To ensure mathematical precision, security, and continuous system operation, the following design assumptions were made:
+1. **Queueing Model Dynamics**: We assumed that turnstile queue arrivals follow a Poisson distribution, and processing times follow an exponential distribution, which are the standard inputs required for the Erlang-C mathematical queueing equations.
+2. **Access and Lane Layouts**: We assumed that gates designated for accessibility modes (e.g. wheelchair, visual, or hearing displays) possess the appropriate physical infrastructure.
+3. **Database Availability**: We assumed that the Firestore service might be unreachable during local offline environments (e.g. CI runners or local tests) and implemented a dynamic local fallback to `venues.json` to prevent server downtime.
+4. **LLM Execution Failovers**: We assumed that external API limits or network issues could temporarily disrupt LLM connectivity. Under these conditions, the assistant falls back to highly optimized local multi-lingual phrasing templates to maintain immediate response times.
+
+---
+
 ## 🏁 Quick Start & Run Guide
 
 ### Running Locally (Zero Setup)
